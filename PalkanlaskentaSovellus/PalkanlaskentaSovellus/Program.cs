@@ -11,6 +11,7 @@ class MainClass
 
     public static void Main(string[] args)
     {
+        var TESTAUSMUUTAMINUT = new LueTyöntekijät();
 
         Console.WriteLine("Tervetuloa Palkanlasku-sovellukseen. Valitse rooli:");
         Console.WriteLine("[1] Henkilöstöpäällikkö");
@@ -30,6 +31,10 @@ class MainClass
             Console.WriteLine("[2] Lisää työntekijä");
             Console.WriteLine("[3] Poista työntekijä");
             int toiminto1 = int.Parse(Console.ReadLine());
+            if (toiminto1 == 1)
+            {
+                TESTAUSMUUTAMINUT.LuetteleKaikki();
+            }
         }
 
         if (rooli == 2)
@@ -37,6 +42,10 @@ class MainClass
             Console.WriteLine("Palkanlaskija, valitse toiminto:");
             Console.WriteLine("[1] Lista työntekijöistä");
             int toiminto2 = int.Parse(Console.ReadLine());
+            if (toiminto2 == 1)
+            {
+                TESTAUSMUUTAMINUT.LuetteleKaikki();
+            }
         }
     }
 
