@@ -37,6 +37,8 @@ class MainClass
         {
             PalkanLaskijanToiminnot(lueTyontekijat, tyontekijat);
         }
+
+        Työntekijä henkilö = new Työntekijä();
     }
 
     private static void PalkanLaskijanToiminnot(LueTyöntekijät lueTyontekijat, List<string> tyontekijat)
@@ -232,4 +234,8 @@ class MainClass
         }
         while (!syotteenTarkistus || oikeaSyote > toimintojenMaara);
     }
+}
+
+internal class Työntekijä
+{
 }
