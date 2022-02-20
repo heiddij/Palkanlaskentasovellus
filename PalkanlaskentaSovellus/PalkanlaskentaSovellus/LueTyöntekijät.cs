@@ -32,7 +32,7 @@ internal class LueTyöntekijät
         int rivinLaskija = 1;
         if (hakusana.All(Char.IsLetter) == true) // Tarkistetaan että haetaan vain kirjaimilla.
         {
-            StreamReader reader = File.OpenText("../../../../työntekijät.txt");
+            StreamReader reader = File.OpenText("../../../../../työntekijät.txt");
             string line = reader.ReadLine();
             while (line != null)
             {
