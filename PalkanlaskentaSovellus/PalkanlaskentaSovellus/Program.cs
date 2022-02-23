@@ -50,24 +50,18 @@ class MainClass
 
         if (rooli == 1)
         {
-            HenkilostopaallikonToiminnot(lueTyontekijat, tyontekijat);
+            HenkilostopaallikonToiminnot(lueTyontekijat, tyontekijatLista);
         }
 
         if (rooli == 2)
         {
-            PalkanLaskijanToiminnot(lueTyontekijat, tyontekijat);
+            PalkanLaskijanToiminnot(lueTyontekijat, tyontekijatLista);
         }
 
         Työntekijä henkilö = new Työntekijä();
     }
 
-    private static void TyontekijatListaan()
-    {
-
-    }
-
-
-    private static void PalkanLaskijanToiminnot(LueTyöntekijät lueTyontekijat, List<string> tyontekijat)
+    private static void PalkanLaskijanToiminnot(LueTyöntekijät lueTyontekijat, List<Työntekijä> tyontekijatLista)
     {
         Console.WriteLine("Palkanlaskija, valitse toiminto:");
         Console.WriteLine("[1] Lista työntekijöistä");
@@ -83,27 +77,27 @@ class MainClass
                 lueTyontekijat.LuetteleKaikki();
                 break;
             case 2:
-                HaeTyontekijaPalkanlaskuaVarten(tyontekijat);
+                HaeTyontekijaPalkanlaskuaVarten(tyontekijatLista);
                 break;
         }
     }
 
-    private static void HaeTyontekijaPalkanlaskuaVarten(List<string> tyontekijat)
+    private static void HaeTyontekijaPalkanlaskuaVarten(List<Työntekijä> tyontekijatLista)
     {
         Console.WriteLine("Työntekijän haku");
         Console.WriteLine("Syötä työntekijän sukunimi:");
         var sukunimi = Console.ReadLine();
-
-        for (int i = 0; i < tyontekijat.Count; i++)
+        
+        for (int i = 0; i < tyontekijatLista.Count; i++)
         {
-            if (!tyontekijat.Contains(sukunimi))
+            //if (!tyontekijatLista[i].Sukunimi.Contains(sukunimi))
+            //{
+            //    Console.WriteLine("Työntekijää ei löydy. Syötä sukunimi uudestaan:");
+            //    sukunimi = Console.ReadLine();
+            //}
+            if (sukunimi == tyontekijatLista[i].Sukunimi)
             {
-                Console.WriteLine("Työntekijää ei löydy. Syötä sukunimi uudestaan:");
-                sukunimi = Console.ReadLine();
-            }
-            if (sukunimi == tyontekijat[i])
-            {
-                var tyontekija = tyontekijat[i];
+                var tyontekija = tyontekijatLista[i].Sukunimi;
                 Console.WriteLine("Löydetty työntekijä: " + tyontekija);
                 Console.WriteLine("Valitse seuraava toiminto:");
                 Console.WriteLine("[1] Näytä tiedot");
@@ -139,7 +133,7 @@ class MainClass
         }
     }
 
-    private static void HenkilostopaallikonToiminnot(LueTyöntekijät lueTyontekijat, List<string> tyontekijat)
+    private static void HenkilostopaallikonToiminnot(LueTyöntekijät lueTyontekijat, List<Työntekijä> tyontekijatLista)
     {
         Console.WriteLine("Henkilöstöpäällikkö, valitse toiminto:");
         Console.WriteLine("[1] Lista työntekijöistä");
@@ -166,28 +160,28 @@ class MainClass
                 // poisto-toiminto tähän
                 break;
             case 4:
-                HaeTyontekija(tyontekijat);
+                HaeTyontekija(tyontekijatLista);
                 break;
 
         }
     }
 
-    private static void HaeTyontekija(List<string> tyontekijat)
+    private static void HaeTyontekija(List<Työntekijä> tyontekijatLista)
     {
         Console.WriteLine("Työntekijän haku");
         Console.WriteLine("Syötä työntekijän sukunimi:");
         var sukunimi = Console.ReadLine();
 
-        for (int i = 0; i < tyontekijat.Count; i++)
+        for (int i = 0; i < tyontekijatLista.Count; i++)
         {
-            if (!tyontekijat.Contains(sukunimi))
+            //if (!tyontekijatLista[i].Sukunimi.Contains(sukunimi))
+            //{
+            //    Console.WriteLine("Työntekijää ei löydy. Syötä sukunimi uudestaan:");
+            //    sukunimi = Console.ReadLine();
+            //}
+            if (sukunimi == tyontekijatLista[i].Sukunimi)
             {
-                Console.WriteLine("Työntekijää ei löydy. Syötä sukunimi uudestaan:");
-                sukunimi = Console.ReadLine();
-            }
-            if (sukunimi == tyontekijat[i])
-            {
-                var tyontekija = tyontekijat[i];
+                var tyontekija = tyontekijatLista[i].Sukunimi;
                 Console.WriteLine("Löydetty työntekijä: " + tyontekija);
                 Console.WriteLine("Valitse seuraava toiminto:");
                 Console.WriteLine("[1] Näytä tiedot");
