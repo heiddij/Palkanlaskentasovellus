@@ -16,6 +16,26 @@ class MainClass
         int rooli;
         int toimintojenMaara = 2;
         List<string> tyontekijat = new List<string>(); // TESTAUKSEEN -- tähän lista työntekijä-olioista
+        List<Työntekijä> tyontekijatLista = new List<Työntekijä>(); // Käytetään alla.
+
+        // Alla oleva voisi olla omassa metodissaan. En saanut sitä toimimaan, joten se on nyt tässä. Saa korjata!
+        StreamReader reader = File.OpenText("../../../../../työntekijät.txt");
+        string line = reader.ReadLine();
+        while (line != null)
+        {
+            string[] jaaOsiin = line.Split(";");
+            string Sukunimi = jaaOsiin[0];
+            string Etunimi = jaaOsiin[1];
+            string Tehtävä = jaaOsiin[2];
+            double Kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
+            double Ikälisä = Convert.ToDouble(jaaOsiin[4]);
+            double Veroprosentti = Convert.ToDouble(jaaOsiin[5]);
+            // Console.WriteLine(Sukunimi + Etunimi + Tehtävä + Kuukausipalkka + Ikälisä + Veroprosentti); // Testaus
+
+            tyontekijatLista.Add(new Työntekijä(Sukunimi, Etunimi, Tehtävä, Kuukausipalkka, Ikälisä, Veroprosentti));
+            line = reader.ReadLine();
+        }
+        reader.Close();
 
         Console.WriteLine("Tervetuloa Palkanlasku-sovellukseen. Valitse rooli:");
         Console.WriteLine("[1] Henkilöstöpäällikkö");
@@ -40,6 +60,12 @@ class MainClass
 
         Työntekijä henkilö = new Työntekijä();
     }
+
+    private static void TyontekijatListaan()
+    {
+
+    }
+
 
     private static void PalkanLaskijanToiminnot(LueTyöntekijät lueTyontekijat, List<string> tyontekijat)
     {
@@ -234,8 +260,4 @@ class MainClass
         }
         while (!syotteenTarkistus || oikeaSyote > toimintojenMaara);
     }
-}
-
-internal class Työntekijä
-{
 }
