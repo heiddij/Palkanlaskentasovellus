@@ -49,11 +49,11 @@ class MainClass
                     poistu = true;
                     break;
                 case 1:
-                    Henkilostopaallikko henkilostopaallikko = new Henkilostopaallikko();
+                    Henkilostopaallikko henkilostopaallikko = new Henkilostopaallikko(tyontekijatLista);
                     henkilostopaallikko.Suorita();
                     break;
                 case 2:
-                    Palkanlaskija palkanlaskija = new Palkanlaskija();
+                    Palkanlaskija palkanlaskija = new Palkanlaskija(tyontekijatLista);
                     palkanlaskija.Suorita();
                     break;
             }

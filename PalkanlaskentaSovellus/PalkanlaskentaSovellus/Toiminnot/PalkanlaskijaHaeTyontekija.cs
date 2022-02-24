@@ -56,7 +56,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
                                 break;
                             case 4:
                                 Console.WriteLine("Lasketaan työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " viimeisin palkka:");
-                                // Kutsutaan laske palkka -metodia palkanlasku-luokasta?
+                                PalkkaLaskuri palkkalaskuri = new PalkkaLaskuri(tyontekija);
+                                palkkalaskuri.LaskePalkka();
                                 break;
                         }
 

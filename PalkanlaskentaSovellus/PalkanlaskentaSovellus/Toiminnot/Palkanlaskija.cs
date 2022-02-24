@@ -8,31 +8,18 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class Palkanlaskija
     {
+        private List<Työntekijä> tyontekijaLista;
+        LueTyöntekijät lueTyontekijat = new LueTyöntekijät();
+
+        public Palkanlaskija(List<Työntekijä> tyontekijaLista)
+        {
+            this.tyontekijaLista = tyontekijaLista;
+        }
 
         public void Suorita()
         {
             Console.Clear();
             var lueTyontekijat = new LueTyöntekijät();
-            List<Työntekijä> tyontekijatLista = new List<Työntekijä>(); // Käytetään alla.
-
-            // Alla oleva voisi olla omassa metodissaan. En saanut sitä toimimaan, joten se on nyt tässä. Saa korjata!
-            StreamReader reader = File.OpenText("../../../../../työntekijät.txt");
-            string line = reader.ReadLine();
-            while (line != null)
-            {
-                string[] jaaOsiin = line.Split(";");
-                string Sukunimi = jaaOsiin[0];
-                string Etunimi = jaaOsiin[1];
-                string Tehtävä = jaaOsiin[2];
-                double Kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
-                double Ikälisä = Convert.ToDouble(jaaOsiin[4]);
-                double Veroprosentti = Convert.ToDouble(jaaOsiin[5]);
-                // Console.WriteLine(Sukunimi + Etunimi + Tehtävä + Kuukausipalkka + Ikälisä + Veroprosentti); // Testaus
-
-                tyontekijatLista.Add(new Työntekijä(Sukunimi, Etunimi, Tehtävä, Kuukausipalkka, Ikälisä, Veroprosentti));
-                line = reader.ReadLine();
-            }
-            reader.Close();
 
             while (true)
             {
@@ -57,7 +44,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         break;
                     case 2:
                         PalkanlaskijaHaeTyontekija palkanlaskijaHae = new PalkanlaskijaHaeTyontekija();
-                        palkanlaskijaHae.HaeTyontekija(tyontekijatLista);
+                        palkanlaskijaHae.HaeTyontekija(tyontekijaLista);
                         break;
                 }
 
