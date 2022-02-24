@@ -26,4 +26,9 @@ internal class Työntekijä
         public Työntekijä()
         {
         }
+
+        public override string ToString()
+        {
+            return "Tehtävä: " + Tehtävä + "; Kuukausipalkka: " + Kuukausipalkka + "; Ikälisä: " + Ikälisä + "; Veroprosentti: " + Veroprosentti;
+        }
 }

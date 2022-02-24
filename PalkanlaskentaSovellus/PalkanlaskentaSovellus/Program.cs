@@ -2,13 +2,14 @@
 
 // Ohjelman pääluokka, ns. pääohjelma, josta kaikki toiminnallisuus alkaa
 
+using PalkanlaskentaSovellus.Toiminnot;
+
 class MainClass
 {
     // Main metodia kutsutaan kun ohjelma käynnistyy. Tämä on ensimmäinen metodi mitä ohjelma kutsuu ja mistä
     // kaikki alkaa. 
     //
     // "string[] args" tarkoittaa parametreja, jos niitä on annettu ohjelman alkaessa esim. komentokehotteesta
-
     public static void Main(string[] args)
     {
         var lueTyontekijat = new LueTyöntekijät();
@@ -50,6 +51,8 @@ class MainClass
 
         if (rooli == 1)
         {
+            MenuToiminto toiminto01 = new EnsimmainenToiminto();
+            toiminto01.Suorita();
             HenkilostopaallikonToiminnot(lueTyontekijat, tyontekijatLista);
         }
 
@@ -57,8 +60,6 @@ class MainClass
         {
             PalkanLaskijanToiminnot(lueTyontekijat, tyontekijatLista);
         }
-
-        Työntekijä henkilö = new Työntekijä();
     }
 
     private static void PalkanLaskijanToiminnot(LueTyöntekijät lueTyontekijat, List<Työntekijä> tyontekijatLista)
@@ -66,6 +67,7 @@ class MainClass
         Console.WriteLine("Palkanlaskija, valitse toiminto:");
         Console.WriteLine("[1] Lista työntekijöistä");
         Console.WriteLine("[2] Hae työntekijä");
+
         int toiminto2;
         bool syotteenTarkistus;
         int toimintojenMaara = 2;
@@ -97,8 +99,8 @@ class MainClass
             //}
             if (sukunimi == tyontekijatLista[i].Sukunimi)
             {
-                var tyontekija = tyontekijatLista[i].Sukunimi;
-                Console.WriteLine("Löydetty työntekijä: " + tyontekija);
+                Työntekijä tyontekija = tyontekijatLista[i];
+                Console.WriteLine("Löydetty työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi);
                 Console.WriteLine("Valitse seuraava toiminto:");
                 Console.WriteLine("[1] Näytä tiedot");
                 Console.WriteLine("[2] Näytä viime kuukauden tunnit");
@@ -112,8 +114,8 @@ class MainClass
                 switch (toiminto4)
                 {
                     case 1:
-                        Console.WriteLine("Työntekijän " + tyontekija + " tiedot:");
-                        // tulostus työntekijä-olion tiedoista
+                        Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:");
+                        Console.WriteLine(tyontekija.ToString()); // tulostus työntekijä-olion tiedoista
                         break;
 
                     case 2:
@@ -181,8 +183,8 @@ class MainClass
             //}
             if (sukunimi == tyontekijatLista[i].Sukunimi)
             {
-                var tyontekija = tyontekijatLista[i].Sukunimi;
-                Console.WriteLine("Löydetty työntekijä: " + tyontekija);
+                Työntekijä tyontekija = tyontekijatLista[i];
+                Console.WriteLine("Löydetty työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi);
                 Console.WriteLine("Valitse seuraava toiminto:");
                 Console.WriteLine("[1] Näytä tiedot");
                 Console.WriteLine("[2] Muokkaa tietoja");
@@ -194,8 +196,8 @@ class MainClass
                 switch (toiminto3)
                 {
                     case 1:
-                        Console.WriteLine("Työntekijän " + tyontekija + " tiedot:");
-                        // tulostus työntekijä-olion tiedoista
+                        Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:");
+                        Console.WriteLine(tyontekija.ToString()); // tulostus työntekijä-olion tiedoista
                         break;
 
                     case 2:
@@ -206,9 +208,9 @@ class MainClass
         }
     }
 
-    private static void TietojenMuokkaus(string tyontekija)
+    private static void TietojenMuokkaus(Työntekijä tyontekija)
     {
-        Console.WriteLine("Työntekijän " + tyontekija + " tietojen muokkaus:");
+        Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tietojen muokkaus:");
         Console.WriteLine("Valitse, mitä tietoja haluat muokata:");
         Console.WriteLine("[1] Muuta työnimike");
         Console.WriteLine("[2] Muuta peruspalkkan määrä");
@@ -224,18 +226,26 @@ class MainClass
             case 1:
                 Console.WriteLine("Syötä uusi työnimike:");
                 var tyonimike = Console.ReadLine();
+                tyontekija.Tehtävä = tyonimike;
+                Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi työnimike on: " + tyontekija.Tehtävä);
                 break;
             case 2:
                 Console.WriteLine("Syötä uusi peruspalkka:");
-                var peruspalkka = int.Parse(Console.ReadLine());
+                var peruspalkka = double.Parse(Console.ReadLine());
+                tyontekija.Kuukausipalkka = peruspalkka;
+                Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi kuukausipalkka on: " + tyontekija.Kuukausipalkka);
                 break;
             case 3:
                 Console.WriteLine("Syötä uusi ikälisäprosentti:");
-                var ikalisa = int.Parse(Console.ReadLine());
+                var ikalisa = double.Parse(Console.ReadLine());
+                tyontekija.Ikälisä = ikalisa;
+                Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi ikälisäprosentti on: " + tyontekija.Ikälisä);
                 break;
             case 4:
                 Console.WriteLine("Syötä uusi veroprosentti:");
-                var veroprosentti = int.Parse(Console.ReadLine());
+                var veroprosentti = double.Parse(Console.ReadLine());
+                tyontekija.Veroprosentti = veroprosentti;
+                Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi veroprosentti on: " + tyontekija.Veroprosentti);
                 break;
         }
     }
