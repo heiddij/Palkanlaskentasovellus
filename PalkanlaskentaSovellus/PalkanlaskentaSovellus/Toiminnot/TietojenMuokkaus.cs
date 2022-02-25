@@ -16,7 +16,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
             while (true)
             {
                 Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tietojen muokkaus:");
-                Console.WriteLine("Valitse, mitä tietoja haluat muokata:");
+                Console.WriteLine("Valitse, mitä tietoja haluat muokata:\n");
                 Console.WriteLine("[0] Takaisin");
                 Console.WriteLine("[1] Muuta työnimike");
                 Console.WriteLine("[2] Muuta peruspalkkan määrä");
@@ -38,25 +38,25 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         Console.WriteLine("Syötä uusi työnimike:");
                         var tyonimike = Console.ReadLine();
                         tyontekija.Tehtävä = tyonimike;
-                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi työnimike on: " + tyontekija.Tehtävä);
+                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi työnimike on: " + tyontekija.Tehtävä + "\n");
                         break;
                     case 2:
                         Console.WriteLine("Syötä uusi peruspalkka:");
                         var peruspalkka = double.Parse(Console.ReadLine());
                         tyontekija.Kuukausipalkka = peruspalkka;
-                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi kuukausipalkka on: " + tyontekija.Kuukausipalkka);
+                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi kuukausipalkka on: " + tyontekija.Kuukausipalkka + "\n");
                         break;
                     case 3:
                         Console.WriteLine("Syötä uusi ikälisäprosentti:");
                         var ikalisa = double.Parse(Console.ReadLine());
                         tyontekija.Ikälisä = ikalisa;
-                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi ikälisäprosentti on: " + tyontekija.Ikälisä);
+                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi ikälisäprosentti on: " + tyontekija.Ikälisä + "\n");
                         break;
                     case 4:
                         Console.WriteLine("Syötä uusi veroprosentti:");
                         var veroprosentti = double.Parse(Console.ReadLine());
                         tyontekija.Veroprosentti = veroprosentti;
-                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi veroprosentti on: " + tyontekija.Veroprosentti);
+                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi veroprosentti on: " + tyontekija.Veroprosentti + "\n");
                         break;
                 }
                 if (poistu)

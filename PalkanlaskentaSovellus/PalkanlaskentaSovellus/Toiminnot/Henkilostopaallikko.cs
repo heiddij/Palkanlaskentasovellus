@@ -22,7 +22,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 
             while (true)
             {
-                Console.WriteLine("Henkilöstöpäällikkö, valitse toiminto:"); 
+                Console.WriteLine("Henkilöstöpäällikkö, valitse toiminto:\n"); 
                 Console.WriteLine("[0] Lopetus");
                 Console.WriteLine("[1] Lista työntekijöistä");
                 Console.WriteLine("[2] Lisää työntekijä");
@@ -41,8 +41,9 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         poistu = true;
                         break;
                     case 1:
-                        Console.WriteLine("Lista työntekijöistä:");
+                        Console.WriteLine("Lista työntekijöistä:\n");
                         lueTyontekijat.LuetteleKaikki();
+                        Console.WriteLine("\n");
                         break;
                     case 2:
                         Console.WriteLine("Työntekijän lisäys");

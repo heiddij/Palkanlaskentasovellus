@@ -22,7 +22,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                     while (true)
                     {
                         Työntekijä tyontekija = tyontekijatLista[i];
-                        Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi);
+                        Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
                         Console.WriteLine("Valitse seuraava toiminto:");
                         Console.WriteLine("[0] Lopetus");
                         Console.WriteLine("[1] Näytä tiedot");
@@ -40,8 +40,9 @@ namespace PalkanlaskentaSovellus.Toiminnot
                                 poistu = true;
                                 break;
                             case 1:
-                                Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:");
+                                Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:\n");
                                 Console.WriteLine(tyontekija.ToString()); // tulostus työntekijä-olion tiedoista
+                                Console.WriteLine("\n");
                                 break;
 
                             case 2:
