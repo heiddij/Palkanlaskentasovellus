@@ -5,27 +5,27 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        LueTyöntekijät lueTyontekijat = new LueTyöntekijät();
+        LueTyontekijat lueTyontekijat = new LueTyontekijat();
         bool syotteenTarkistus; // onko syöte int vai joku muu
         int rooli;
         int toimintojenMaara = 2;
-        List<Työntekijä> tyontekijatLista = new List<Työntekijä>(); // Käytetään alla.
+        List<Tyontekija> tyontekijatLista = new List<Tyontekija>(); // Käytetään alla.
 
         // Alla oleva voisi olla omassa metodissaan. En saanut sitä toimimaan, joten se on nyt tässä. Saa korjata!
-        StreamReader reader = File.OpenText("../../../../../työntekijät.txt");
+        StreamReader reader = File.OpenText("../../../../../tyontekijat.txt");
         string line = reader.ReadLine();
         while (line != null)
         {
             string[] jaaOsiin = line.Split(";");
             string Sukunimi = jaaOsiin[0];
             string Etunimi = jaaOsiin[1];
-            string Tehtävä = jaaOsiin[2];
+            string Tehtava = jaaOsiin[2];
             double Kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
-            double Ikälisä = Convert.ToDouble(jaaOsiin[4]);
+            double Ikalisa = Convert.ToDouble(jaaOsiin[4]);
             double Veroprosentti = Convert.ToDouble(jaaOsiin[5]);
-            // Console.WriteLine(Sukunimi + Etunimi + Tehtävä + Kuukausipalkka + Ikälisä + Veroprosentti); // Testaus
+            // Console.WriteLine(Sukunimi + Etunimi + Tehtava + Kuukausipalkka + Ikalisa + Veroprosentti); // Testaus
 
-            tyontekijatLista.Add(new Työntekijä(Sukunimi, Etunimi, Tehtävä, Kuukausipalkka, Ikälisä, Veroprosentti));
+            tyontekijatLista.Add(new Tyontekija(Sukunimi, Etunimi, Tehtava, Kuukausipalkka, Ikalisa, Veroprosentti));
             line = reader.ReadLine();
         }
         reader.Close();

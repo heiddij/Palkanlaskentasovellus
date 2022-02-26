@@ -8,7 +8,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class PalkanlaskijaHaeTyontekija
     {
-        public void HaeTyontekija(List<Työntekijä> tyontekijatLista)
+        public void HaeTyontekija(List<Tyontekija> tyontekijatLista)
         {
             Console.Clear();
             Console.WriteLine("Työntekijän haku");

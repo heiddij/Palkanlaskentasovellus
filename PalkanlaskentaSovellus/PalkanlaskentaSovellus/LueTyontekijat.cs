@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-internal class LueTyöntekijät
+internal class LueTyontekijat
 {
-    public LueTyöntekijät()
+    public LueTyontekijat()
     {
     }
 

@@ -9,9 +9,9 @@ namespace PalkanlaskentaSovellus.Toiminnot
     internal class Henkilostopaallikko
     {
         private List<Työntekijä> tyontekijaLista;
-        LueTyöntekijät lueTyontekijat = new LueTyöntekijät();
+        LueTyöntekijät lueTyontekijat = new LueTyontekijat();
 
-        public Henkilostopaallikko(List<Työntekijä> tyontekijaLista)
+        public Henkilostopaallikko(List<Tyontekija> tyontekijaLista)
         {
             this.tyontekijaLista = tyontekijaLista;
         }

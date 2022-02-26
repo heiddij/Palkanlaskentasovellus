@@ -8,10 +8,10 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class Palkanlaskija
     {
-        private List<Työntekijä> tyontekijaLista;
-        LueTyöntekijät lueTyontekijat = new LueTyöntekijät();
+        private List<Tyontekija> tyontekijaLista;
+        LueTyontekijat lueTyontekijat = new LueTyontekijat();
 
-        public Palkanlaskija(List<Työntekijä> tyontekijaLista)
+        public Palkanlaskija(List<Tyontekija> tyontekijaLista)
         {
             this.tyontekijaLista = tyontekijaLista;
         }
@@ -19,7 +19,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
         public void Suorita()
         {
             Console.Clear();
-            var lueTyontekijat = new LueTyöntekijät();
+            var lueTyontekijat = new LueTyontekijat();
 
             while (true)
             {

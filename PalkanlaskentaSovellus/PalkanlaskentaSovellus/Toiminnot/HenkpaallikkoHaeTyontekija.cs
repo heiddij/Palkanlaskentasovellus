@@ -8,7 +8,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class HenkpaallikkoHaeTyontekija 
     {
-        public void HaeTyontekija(List<Työntekijä> tyontekijatLista)
+        public void HaeTyontekija(List<Tyontekija> tyontekijatLista)
         {
             Console.Clear();
             Console.WriteLine("Työntekijän haku");
@@ -21,7 +21,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                 {
                     while (true)
                     {
-                        Työntekijä tyontekija = tyontekijatLista[i];
+                        Tyontekija tyontekija = tyontekijatLista[i];
                         Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
                         Console.WriteLine("Valitse seuraava toiminto:");
                         Console.WriteLine("[0] Lopetus");

@@ -8,16 +8,16 @@ namespace PalkanlaskentaSovellus
 {
     internal class PalkkaLaskuri
     {
-        private Työntekijä tyontekija;
+        private Tyontekija tyontekija;
 
-        public PalkkaLaskuri(Työntekijä tyontekija)
+        public PalkkaLaskuri(Tyontekija tyontekija)
         {
             this.tyontekija = tyontekija;
         }
 
         public void LaskePalkka()
         {
-            double palkkaLisineen = (1 + tyontekija.Ikälisä/100) * tyontekija.Kuukausipalkka;
+            double palkkaLisineen = (1 + tyontekija.Ikalisa/100) * tyontekija.Kuukausipalkka;
             double palkkaVeroineen = (1 - tyontekija.Veroprosentti / 100) * palkkaLisineen;
 
             Console.WriteLine("Viime kuun palkka työntekijälle " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + ":\n");

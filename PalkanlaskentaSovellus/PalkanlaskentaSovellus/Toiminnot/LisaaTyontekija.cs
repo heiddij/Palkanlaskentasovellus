@@ -8,7 +8,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class LisaaTyontekija
     {
-        public void LisaaTyontekija(Työntekijä tyontekija)
+        public void LisaaTyontekija(Tyontekija tyontekija)
         {
             Console.Clear();
 
