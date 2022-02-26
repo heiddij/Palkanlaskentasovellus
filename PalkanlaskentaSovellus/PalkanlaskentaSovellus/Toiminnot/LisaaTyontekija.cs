@@ -11,7 +11,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
         public void LisaaTyontekija(Tyontekija tyontekija)
         {
             Console.Clear();
-
+            //täytyy tehdä eri tavalla kun poisto
             while (true)
             {
                 Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tietojen lisäys:");
@@ -30,10 +30,9 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         poistu = true;
                         break;
                     case 1:
-                        Console.WriteLine("Työntekijä" + tyontekija.Sukunimi + "poistettu!");
+                        Console.WriteLine("Työntekijä" + tyontekija.Sukunimi + "lisätty!");
                         //tähän itse lisäys koodi!!
-                        //var tyonimike = Console.ReadLine();
-                        //tyontekija.Tehtävä = tyonimike;
+                      
 
                         break;
                 }

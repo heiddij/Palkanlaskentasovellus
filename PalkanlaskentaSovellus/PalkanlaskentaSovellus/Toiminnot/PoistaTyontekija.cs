@@ -32,10 +32,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         break;
                     case 1:
                         Console.WriteLine("Työntekijä" + tyontekija.Sukunimi + "poistettu!");
-                        //tähän itse poisto koodi!!
-                        //var tyonimike = Console.ReadLine();
-                        //tyontekija.Tehtävä = tyonimike;
-                        
+                        //tähän itse poisto koodi, jos saisi poistettua koko rivin!!
+                                                
                         break;
                 }
                 if (poistu)

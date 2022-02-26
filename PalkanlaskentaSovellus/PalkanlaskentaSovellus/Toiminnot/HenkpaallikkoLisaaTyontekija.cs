@@ -11,7 +11,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
         public void LisaaTyontekija(List<Tyontekija> tyontekijatLista)
         {
             Console.Clear();
-            Console.WriteLine("Työntekijän haku");
+            Console.WriteLine("Työntekijän lisäys");//koodi jäi tähän kesken, muuta niin että tiedot lisätään
             Console.WriteLine("Syötä työntekijän sukunimi:");
             var sukunimi = Console.ReadLine();
 
