@@ -10,7 +10,7 @@ internal class LueTyontekijat
     public void LuetteleKaikki()
     {
         // Luettava tiedosto on 5 kansiota taaksepäin .exe -tiedoston kansiosta.
-        StreamReader reader = File.OpenText("../../../../../työntekijät.txt");
+        StreamReader reader = File.OpenText("../../../../../tyontekijat.txt");
         string line = reader.ReadLine();
         while (line != null)
         {
@@ -32,7 +32,7 @@ internal class LueTyontekijat
         int rivinLaskija = 1;
         if (hakusana.All(Char.IsLetter) == true) // Tarkistetaan että haetaan vain kirjaimilla.
         {
-            StreamReader reader = File.OpenText("../../../../../työntekijät.txt");
+            StreamReader reader = File.OpenText("../../../../../tyontekijat.txt");
             string line = reader.ReadLine();
             while (line != null)
             {
