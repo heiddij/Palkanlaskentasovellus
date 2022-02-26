@@ -46,12 +46,14 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         Console.WriteLine("\n");
                         break;
                     case 2:
-                        Console.WriteLine("Työntekijän lisäys");
-                        // lisäys-toiminto tähän
+                        // lisäys-toiminto
+                        HenkpaallikkoLisaaTyontekija paallikkoLisaa = new HenkpaallikkoLisaaTyontekija();
+                        paallikkoLisaa.LisaaTyontekija(tyontekijaLista);
                         break;
                     case 3:
-                        Console.WriteLine("Työntekijän poisto");
-                        // poisto-toiminto tähän
+                        // poisto-toiminto
+                        HenkpaallikkoPoistaTyontekija paallikkoPoista = new HenkpaallikkoPoistaTyontekija();
+                        paallikkoPoista.PoistaTyontekija(tyontekijaLista);
                         break;
                     case 4:
                         HenkpaallikkoHaeTyontekija paallikkoHae = new HenkpaallikkoHaeTyontekija();
