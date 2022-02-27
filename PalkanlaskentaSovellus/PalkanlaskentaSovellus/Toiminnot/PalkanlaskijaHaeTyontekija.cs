@@ -21,7 +21,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                 {
                     while (true)
                     {
-                        Työntekijä tyontekija = tyontekijatLista[i];
+                        Tyontekija tyontekija = tyontekijatLista[i];
                         Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi);
                         Console.WriteLine("Valitse seuraava toiminto:");
                         Console.WriteLine("[0] Lopetus");

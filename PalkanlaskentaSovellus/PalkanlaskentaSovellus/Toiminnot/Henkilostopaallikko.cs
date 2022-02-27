@@ -8,8 +8,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class Henkilostopaallikko
     {
-        private List<Työntekijä> tyontekijaLista;
-        LueTyöntekijät lueTyontekijat = new LueTyontekijat();
+        private List<Tyontekija> tyontekijaLista;
+        LueTyontekijat lueTyontekijat = new LueTyontekijat();
 
         public Henkilostopaallikko(List<Tyontekija> tyontekijaLista)
         {

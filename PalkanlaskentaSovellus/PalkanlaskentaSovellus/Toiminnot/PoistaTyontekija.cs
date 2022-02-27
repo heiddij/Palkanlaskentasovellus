@@ -8,7 +8,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class PoistaTyontekija
     {
-        public void PoistaTyontekija(Tyontekija tyontekija)
+        public void Poista(Tyontekija tyontekija)
         {
             Console.Clear();
 
@@ -23,7 +23,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                 int toimintojenMaara = 1;
                 bool poistu = false;
                 SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
-                syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto5, toimintojenMaara);
+                syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto2, toimintojenMaara);
 
                 switch (toiminto2)
                 {
