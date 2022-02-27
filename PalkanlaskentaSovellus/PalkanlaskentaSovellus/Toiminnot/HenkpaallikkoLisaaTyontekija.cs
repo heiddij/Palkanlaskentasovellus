@@ -47,7 +47,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 
                             case 2:
                                 LisaaTyontekija lisaaTyontekija = new LisaaTyontekija();
-                                lisaaTyontekija.LisaaTietoja(tyontekija);
+                                lisaaTyontekija.Lisaa(tyontekija);
                                 break;
                         }
                         if (poistu)

@@ -47,7 +47,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 
                             case 2:
                                 PoistaTyontekija poistaTyontekija = new PoistaTyontekija();
-                                poistaTyontekija.PoistaTietoja(tyontekija);
+                                poistaTyontekija.Poista(tyontekija);
                                 break;
                         }
                         if (poistu)
