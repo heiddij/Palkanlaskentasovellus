@@ -8,7 +8,7 @@ namespace PalkanlaskentaSovellus
 {
     internal class PalkkaLaskuri
     {
-        private Työntekijä tyontekija;
+        private Tyontekija tyontekija;
 
         // Työnantajan kulut palkasta
         public double TyonantajaTyEL { get; set; }
@@ -19,7 +19,7 @@ namespace PalkanlaskentaSovellus
         public double TyontekijaTyotVakMaksu { get; set; }
 
 
-        public PalkkaLaskuri(Työntekijä tyontekija)
+        public PalkkaLaskuri(Tyontekija tyontekija)
         {
             this.tyontekija = tyontekija;
             TyonantajaTyEL = 0.2585;
@@ -30,7 +30,7 @@ namespace PalkanlaskentaSovellus
 
         public void LaskePalkka()
         {
-            double lisat = tyontekija.Ikälisä/100 * tyontekija.Kuukausipalkka;
+            double lisat = tyontekija.Ikalisa/100 * tyontekija.Kuukausipalkka;
             double verot = tyontekija.Veroprosentti/100 * tyontekija.Kuukausipalkka;
             double kulut = (TyontekijaTyEL + TyontekijaTyotVakMaksu) * tyontekija.Kuukausipalkka;
             double nettopalkka = tyontekija.Kuukausipalkka + lisat - verot -kulut;

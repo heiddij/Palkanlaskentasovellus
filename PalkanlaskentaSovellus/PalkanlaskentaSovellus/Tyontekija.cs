@@ -4,31 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class Työntekijä
+internal class Tyontekija
 {
         public string Sukunimi { get; set; } = "";
         public string Etunimi { get; set; } = "";
-        public string Tehtävä { get; set; } = "";
+        public string Tehtava { get; set; } = "";
         public double Kuukausipalkka { get; set; }
-        public double Ikälisä { get; set; }
+        public double Ikalisa { get; set; }
         public double Veroprosentti { get; set; }
 
-        public Työntekijä(string Sukunimi, string Etunimi, string Tehtävä, double Kuukausipalkka, double Ikälisä, double Veroprosentti)
+        public Tyontekija(string Sukunimi, string Etunimi, string Tehtava, double Kuukausipalkka, double Ikalisa, double Veroprosentti)
         {
             this.Sukunimi = Sukunimi;
             this.Etunimi = Etunimi;
-            this.Tehtävä = Tehtävä;
+            this.Tehtava = Tehtava;
             this.Kuukausipalkka = Kuukausipalkka;
-            this.Ikälisä = Ikälisä;
+            this.Ikalisa = Ikalisa;
             this.Veroprosentti = Veroprosentti;
         }
 
-        public Työntekijä()
+        public Tyontekija()
         {
         }
 
         public override string ToString()
         {
-            return "Tehtävä: " + Tehtävä + "; Kuukausipalkka: " + Kuukausipalkka + "; Ikälisä: " + Ikälisä + "; Veroprosentti: " + Veroprosentti;
+            return "Tehtävä: " + Tehtava + "; Kuukausipalkka: " + Kuukausipalkka + "; Ikälisä: " + Ikalisa + "; Veroprosentti: " + Veroprosentti;
         }
 }

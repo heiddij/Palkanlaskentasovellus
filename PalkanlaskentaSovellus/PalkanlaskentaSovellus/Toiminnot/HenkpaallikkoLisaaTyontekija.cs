@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PalkanlaskentaSovellus.Toiminnot
 {
-    internal class HenkpaallikkoHaeTyontekija 
+    internal class HenkpaallikkoLisaaTyontekija
     {
-        public void HaeTyontekija(List<Tyontekija> tyontekijatLista)
+        public void LisaaTyontekija(List<Tyontekija> tyontekijatLista)
         {
             Console.Clear();
-            Console.WriteLine("Työntekijän haku");
+            Console.WriteLine("Työntekijän lisäys");//koodi jäi tähän kesken, muuta niin että tiedot lisätään
             Console.WriteLine("Syötä työntekijän sukunimi:");
             var sukunimi = Console.ReadLine();
 
@@ -26,7 +26,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         Console.WriteLine("Valitse seuraava toiminto:");
                         Console.WriteLine("[0] Lopetus");
                         Console.WriteLine("[1] Näytä tiedot");
-                        Console.WriteLine("[2] Muokkaa tietoja");
+                        Console.WriteLine("[2] Lisää tiedot");
                         int toiminto3;
                         bool syotteenTarkistus;
                         int toimintojenMaara = 2;
@@ -46,8 +46,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
                                 break;
 
                             case 2:
-                                TietojenMuokkaus tietojenMuokkaus = new TietojenMuokkaus();
-                                tietojenMuokkaus.MuokkaaTietoja(tyontekija);
+                                LisaaTyontekija lisaaTyontekija = new LisaaTyontekija();
+                                lisaaTyontekija.LisaaTietoja(tyontekija);
                                 break;
                         }
                         if (poistu)

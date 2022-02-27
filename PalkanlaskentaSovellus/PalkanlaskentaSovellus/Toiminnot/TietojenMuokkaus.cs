@@ -9,7 +9,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
     internal class TietojenMuokkaus
     {
 
-        public void MuokkaaTietoja(Työntekijä tyontekija)
+        public void MuokkaaTietoja(Tyontekija tyontekija)
         {
             Console.Clear();
 
@@ -37,8 +37,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
                     case 1:
                         Console.WriteLine("Syötä uusi työnimike:");
                         var tyonimike = Console.ReadLine();
-                        tyontekija.Tehtävä = tyonimike;
-                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi työnimike on: " + tyontekija.Tehtävä + "\n");
+                        tyontekija.Tehtava = tyonimike;
+                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi työnimike on: " + tyontekija.Tehtava + "\n");
                         break;
                     case 2:
                         Console.WriteLine("Syötä uusi peruspalkka:");
@@ -49,8 +49,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
                     case 3:
                         Console.WriteLine("Syötä uusi ikälisäprosentti:");
                         var ikalisa = double.Parse(Console.ReadLine());
-                        tyontekija.Ikälisä = ikalisa;
-                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi ikälisäprosentti on: " + tyontekija.Ikälisä + "\n");
+                        tyontekija.Ikalisa = ikalisa;
+                        Console.WriteLine("Henkilön " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " uusi ikälisäprosentti on: " + tyontekija.Ikalisa + "\n");
                         break;
                     case 4:
                         Console.WriteLine("Syötä uusi veroprosentti:");
