@@ -9,26 +9,11 @@ class MainClass
         bool syotteenTarkistus; // onko syöte int vai joku muu
         int rooli;
         int toimintojenMaara = 2;
+
+        // Tehdään lista työntekijöistä.
         List<Tyontekija> tyontekijatLista = new List<Tyontekija>(); // Käytetään alla.
-
-        // Alla oleva voisi olla omassa metodissaan. En saanut sitä toimimaan, joten se on nyt tässä. Saa korjata!
-        StreamReader reader = File.OpenText("../../../../../tyontekijat.txt");
-        string line = reader.ReadLine();
-        while (line != null)
-        {
-            string[] jaaOsiin = line.Split(";");
-            string Sukunimi = jaaOsiin[0];
-            string Etunimi = jaaOsiin[1];
-            string Tehtava = jaaOsiin[2];
-            double Kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
-            double Ikalisa = Convert.ToDouble(jaaOsiin[4]);
-            double Veroprosentti = Convert.ToDouble(jaaOsiin[5]);
-            // Console.WriteLine(Sukunimi + Etunimi + Tehtava + Kuukausipalkka + Ikalisa + Veroprosentti); // Testaus
-
-            tyontekijatLista.Add(new Tyontekija(Sukunimi, Etunimi, Tehtava, Kuukausipalkka, Ikalisa, Veroprosentti));
-            line = reader.ReadLine();
-        }
-        reader.Close();
+        var TyontekijoidenListaus = new LueTyontekijat();
+        TyontekijoidenListaus.LueTyontekijatTiedostosta(tyontekijatLista);
 
         while (true)
         {
