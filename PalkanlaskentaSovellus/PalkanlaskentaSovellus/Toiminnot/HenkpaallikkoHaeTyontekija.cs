@@ -8,54 +8,59 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class HenkpaallikkoHaeTyontekija 
     {
+        LueTyontekijat lueTyontekijat = new LueTyontekijat();
         public void HaeTyontekija(List<Tyontekija> tyontekijatLista)
         {
             Console.Clear();
             Console.WriteLine("Työntekijän haku");
-            Console.WriteLine("Syötä työntekijän sukunimi:");
-            var sukunimi = Console.ReadLine();
+            Console.WriteLine("Syötä työntekijän tunnistenumero:");
+            int numero = int.Parse(Console.ReadLine());
+            int tunniste = numero + 1;
 
-            for (int i = 0; i < tyontekijatLista.Count; i++)
+            while (true)
             {
-                if (sukunimi == tyontekijatLista[i].Sukunimi)
+                Tyontekija tyontekija = lueTyontekijat.HaeTyontekija(tunniste, tyontekijatLista);
+
+                if (tyontekija == null)
                 {
-                    while (true)
-                    {
-                        Tyontekija tyontekija = tyontekijatLista[i];
-                        Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
-                        Console.WriteLine("Valitse seuraava toiminto:");
-                        Console.WriteLine("[0] Lopetus");
-                        Console.WriteLine("[1] Näytä tiedot");
-                        Console.WriteLine("[2] Muokkaa tietoja");
-                        int toiminto3;
-                        bool syotteenTarkistus;
-                        int toimintojenMaara = 2;
-                        bool poistu = false;
-                        SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
-                        syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto3, toimintojenMaara);
-
-                        switch (toiminto3)
-                        {
-                            case 0:
-                                poistu = true;
-                                break;
-                            case 1:
-                                Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:\n");
-                                Console.WriteLine(tyontekija.ToString()); // tulostus työntekijä-olion tiedoista
-                                Console.WriteLine("\n");
-                                break;
-
-                            case 2:
-                                TietojenMuokkaus tietojenMuokkaus = new TietojenMuokkaus(tyontekijatLista);
-                                tietojenMuokkaus.MuokkaaTietoja(tyontekija);
-                                break;
-                        }
-                        if (poistu)
-                        {
-                            Environment.Exit(0); // Lopettaa koko ohjelman
-                        }
-                    }
+                    Console.WriteLine("Työntekijää ei löydy. Tarkista tunnistenumero työntekija-luettelosta.\n");
+                    return;
                 }
+
+                Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
+                Console.WriteLine("Valitse seuraava toiminto:");
+                Console.WriteLine("[0] Lopetus");
+                Console.WriteLine("[1] Näytä tiedot");
+                Console.WriteLine("[2] Muokkaa tietoja");
+                int toiminto3;
+                bool syotteenTarkistus;
+                int toimintojenMaara = 2;
+                bool poistu = false;
+                SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
+                syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto3, toimintojenMaara);
+
+                switch (toiminto3)
+                {
+                    case 0:
+                        poistu = true;
+                        break;
+                    case 1:
+                        Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:\n");
+                        Console.WriteLine(tyontekija.ToString()); // tulostus työntekijä-olion tiedoista
+                        Console.WriteLine("\n");
+                        break;
+
+                    case 2:
+                        TietojenMuokkaus tietojenMuokkaus = new TietojenMuokkaus(tyontekijatLista);
+                        tietojenMuokkaus.MuokkaaTietoja(tyontekija);
+                        break;
+                }
+                if (poistu)
+                {
+                    Environment.Exit(0); // Lopettaa koko ohjelman
+                }
+                    
+                
             }
         }
     }

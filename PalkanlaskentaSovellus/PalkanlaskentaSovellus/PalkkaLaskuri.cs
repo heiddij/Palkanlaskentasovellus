@@ -35,6 +35,7 @@ namespace PalkanlaskentaSovellus
             double kulut = (TyontekijaTyEL + TyontekijaTyotVakMaksu) * tyontekija.Kuukausipalkka;
             double nettopalkka = tyontekija.Kuukausipalkka + lisat - verot -kulut;
 
+            Console.Clear();
             Console.WriteLine("Viime kuun maksettava palkka työntekijälle " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + ":\n");
             Console.WriteLine(string.Format("{0:0.00}", nettopalkka) + " euroa\n");
         }

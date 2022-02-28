@@ -16,19 +16,19 @@ internal class LueTyontekijat
         }
     }
 
-    // Haetaan työntekijälistasta sukunimi.
-    // Jos löytyy, niin palauttaa rivin mistä työntekijä löytyy (tekstitiedostosta) int arvolla, muuten palautus 0.
-    public int HaeTyontekija(string hakusana, List<Tyontekija> tyontekijatLista)
+    // Haetaan työntekijä listalta, jos ei löydy niin palautetaan null
+
+    public Tyontekija? HaeTyontekija(int tunniste, List<Tyontekija> tyontekijatLista)
     {
-        int palautus = 0;
         for (int i = 0; i < tyontekijatLista.Count; i++)
         {
-            if (tyontekijatLista[i].Sukunimi.Contains(hakusana))
+            if (i == tunniste)
             {
-                palautus = i;
-                break;
+                Tyontekija tyontekija = tyontekijatLista[i];
+                return tyontekija;
             }
-        }
-        return palautus;
+
+        } 
+        return null;
     }
 }
