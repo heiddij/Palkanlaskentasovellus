@@ -20,9 +20,10 @@ internal class LueTyontekijat
             double Kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
             double Ikälisä = Convert.ToDouble(jaaOsiin[4]);
             double Veroprosentti = Convert.ToDouble(jaaOsiin[5]);
+            int Numero = Convert.ToInt32(jaaOsiin[6]);
             // Console.WriteLine(Sukunimi + Etunimi + Tehtävä + Kuukausipalkka + Ikälisä + Veroprosentti); // Testaus
 
-            tyontekijatLista.Add(new Tyontekija(Sukunimi, Etunimi, Tehtävä, Kuukausipalkka, Ikälisä, Veroprosentti));
+            tyontekijatLista.Add(new Tyontekija(Sukunimi, Etunimi, Tehtävä, Kuukausipalkka, Ikälisä, Veroprosentti, Numero));
             line = reader.ReadLine();
         }
         reader.Close();

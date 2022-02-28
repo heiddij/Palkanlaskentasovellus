@@ -12,8 +12,9 @@ internal class Tyontekija
         public double Kuukausipalkka { get; set; }
         public double Ikalisa { get; set; }
         public double Veroprosentti { get; set; }
+        public int Numero { get; set; }
 
-        public Tyontekija(string Sukunimi, string Etunimi, string Tehtava, double Kuukausipalkka, double Ikalisa, double Veroprosentti)
+        public Tyontekija(string Sukunimi, string Etunimi, string Tehtava, double Kuukausipalkka, double Ikalisa, double Veroprosentti, int Numero)
         {
             this.Sukunimi = Sukunimi;
             this.Etunimi = Etunimi;
@@ -21,6 +22,7 @@ internal class Tyontekija
             this.Kuukausipalkka = Kuukausipalkka;
             this.Ikalisa = Ikalisa;
             this.Veroprosentti = Veroprosentti;
+            this.Numero = Numero;
         }
 
         public Tyontekija()
