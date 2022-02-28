@@ -46,7 +46,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                                 break;
 
                             case 2:
-                                TietojenMuokkaus tietojenMuokkaus = new TietojenMuokkaus();
+                                TietojenMuokkaus tietojenMuokkaus = new TietojenMuokkaus(tyontekijatLista);
                                 tietojenMuokkaus.MuokkaaTietoja(tyontekija);
                                 break;
                         }

@@ -8,6 +8,13 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class TietojenMuokkaus
     {
+        private List<Tyontekija> tyontekijaLista;
+        TiedostonKasittelija tiedostonKasittelija = new TiedostonKasittelija();
+
+        public TietojenMuokkaus(List<Tyontekija> tyontekijaLista)
+        {
+            this.tyontekijaLista = tyontekijaLista;
+        }
 
         public void MuokkaaTietoja(Tyontekija tyontekija)
         {
@@ -16,7 +23,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
             while (true)
             {
                 Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tietojen muokkaus:");
-                Console.WriteLine("Valitse, mitä tietoja haluat muokata:\n");
+                Console.WriteLine("Valitse, mitä tietoja haluat muokata. Lopettaessasi ohjelman tiedot tallentuvat automaattisesti:\n");
                 Console.WriteLine("[0] Takaisin");
                 Console.WriteLine("[1] Muuta työnimike");
                 Console.WriteLine("[2] Muuta peruspalkkan määrä");
@@ -61,6 +68,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                 }
                 if (poistu)
                 {
+                    tiedostonKasittelija.Talleta(tyontekijaLista);
                     break;
                 }
             }

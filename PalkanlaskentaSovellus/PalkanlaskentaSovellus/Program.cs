@@ -5,15 +5,14 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        LueTyontekijat lueTyontekijat = new LueTyontekijat();
         bool syotteenTarkistus; // onko syöte int vai joku muu
         int rooli;
         int toimintojenMaara = 2;
 
         // Tehdään lista työntekijöistä.
         List<Tyontekija> tyontekijatLista = new List<Tyontekija>(); // Käytetään alla.
-        var TyontekijoidenListaus = new LueTyontekijat();
-        TyontekijoidenListaus.LueTyontekijatTiedostosta(tyontekijatLista);
+        TiedostonKasittelija tiedostonKasittelija = new TiedostonKasittelija();
+        tiedostonKasittelija.LueTyontekijatTiedostosta(tyontekijatLista);
 
         while (true)
         {
