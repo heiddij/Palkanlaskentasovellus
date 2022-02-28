@@ -40,7 +40,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         poistu = true;
                         break;
                     case 1:
-                        lueTyontekijat.LuetteleKaikki();
+                        lueTyontekijat.LuetteleKaikki(tyontekijaLista);
                         break;
                     case 2:
                         PalkanlaskijaHaeTyontekija palkanlaskijaHae = new PalkanlaskijaHaeTyontekija();

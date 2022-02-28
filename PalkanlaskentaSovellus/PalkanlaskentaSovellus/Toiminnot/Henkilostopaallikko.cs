@@ -42,7 +42,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         break;
                     case 1:
                         Console.WriteLine("Lista työntekijöistä:\n");
-                        lueTyontekijat.LuetteleKaikki();
+                        lueTyontekijat.LuetteleKaikki(tyontekijaLista);
                         Console.WriteLine("\n");
                         break;
                     case 2:
