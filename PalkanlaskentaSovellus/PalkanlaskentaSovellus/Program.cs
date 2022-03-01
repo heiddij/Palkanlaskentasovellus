@@ -16,11 +16,7 @@ class MainClass
 
         while (true)
         {
-            Console.Clear();
-            Console.WriteLine("Tervetuloa Palkanlasku-sovellukseen. Valitse rooli (0 lopettaa):\n");
-            Console.WriteLine("[0] Lopetus");
-            Console.WriteLine("[1] Henkilöstöpäällikkö");
-            Console.WriteLine("[2] Palkanlaskija");
+            TulostaToiminnot();
 
             bool poistu = false;
 
@@ -47,6 +43,15 @@ class MainClass
             }
         }
 
-        
+
+    }
+
+    private static void TulostaToiminnot()
+    {
+        Console.Clear();
+        Console.WriteLine("Tervetuloa Palkanlasku-sovellukseen. Valitse rooli (0 lopettaa):\n");
+        Console.WriteLine("[0] Lopetus");
+        Console.WriteLine("[1] Henkilöstöpäällikkö");
+        Console.WriteLine("[2] Palkanlaskija");
     }
 }

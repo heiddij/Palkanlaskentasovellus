@@ -22,12 +22,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
 
             while (true)
             {
-                Console.WriteLine("Henkilöstöpäällikkö, valitse toiminto:\n"); 
-                Console.WriteLine("[0] Lopetus");
-                Console.WriteLine("[1] Lista työntekijöistä");
-                Console.WriteLine("[2] Lisää työntekijä");
-                Console.WriteLine("[3] Poista työntekijä");
-                Console.WriteLine("[4] Hae työntekijä");
+                TulostaToiminnot();
+
                 int toiminto1;
                 bool syotteenTarkistus;
                 int toimintojenMaara = 5;
@@ -65,6 +61,16 @@ namespace PalkanlaskentaSovellus.Toiminnot
                     break; // Menee takaisin alkuun
                 }
             }
+        }
+
+        private static void TulostaToiminnot()
+        {
+            Console.WriteLine("Henkilöstöpäällikkö, valitse toiminto:\n");
+            Console.WriteLine("[0] Lopetus");
+            Console.WriteLine("[1] Lista työntekijöistä");
+            Console.WriteLine("[2] Lisää työntekijä");
+            Console.WriteLine("[3] Poista työntekijä");
+            Console.WriteLine("[4] Hae työntekijä");
         }
     }
 }

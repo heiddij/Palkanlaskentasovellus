@@ -29,6 +29,6 @@ internal class Tyontekija
 
         public override string ToString()
         {
-            return "Tehtävä: " + Tehtava + "; Kuukausipalkka: " + Kuukausipalkka + "; Ikälisä: " + Ikalisa + "; Veroprosentti: " + Veroprosentti;
+            return "Tehtävä:\t\t\t" + Tehtava + "\nKuukausipalkka:\t\t\t" + Kuukausipalkka + " euroa\nIkälisä:\t\t\t" + Ikalisa + "%\nVeroprosentti:\t\t\t" + Veroprosentti + "%";
         }
 }

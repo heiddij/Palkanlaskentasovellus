@@ -23,10 +23,7 @@ namespace PalkanlaskentaSovellus.Toiminnot
 
             while (true)
             {
-                Console.WriteLine("Palkanlaskija, valitse toiminto:");
-                Console.WriteLine("[0] Lopetus");
-                Console.WriteLine("[1] Lista työntekijöistä");
-                Console.WriteLine("[2] Hae työntekijä");
+                TulostaToiminnot();
 
                 int toiminto2;
                 bool syotteenTarkistus;
@@ -53,6 +50,14 @@ namespace PalkanlaskentaSovellus.Toiminnot
                     break;
                 }
             }
+        }
+
+        private static void TulostaToiminnot()
+        {
+            Console.WriteLine("Palkanlaskija, valitse toiminto:");
+            Console.WriteLine("[0] Lopetus");
+            Console.WriteLine("[1] Lista työntekijöistä");
+            Console.WriteLine("[2] Hae työntekijä");
         }
     }
 }

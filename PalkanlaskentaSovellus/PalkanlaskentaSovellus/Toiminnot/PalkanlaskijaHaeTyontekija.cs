@@ -9,18 +9,19 @@ namespace PalkanlaskentaSovellus.Toiminnot
     internal class PalkanlaskijaHaeTyontekija
     {
         LueTyontekijat lueTyontekijat = new LueTyontekijat();
+        SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
 
         public void HaeTyontekija(List<Tyontekija> tyontekijatLista)
         {
             Console.Clear();
             Console.WriteLine("Työntekijän haku");
             Console.WriteLine("Syötä työntekijän tunnistenumero:");
-            int numero = int.Parse(Console.ReadLine());
-            int tunniste = numero + 1;
+            int tunniste = int.Parse(Console.ReadLine());
+            int indeksi = tunniste - 1;
 
             while (true)
             {
-                Tyontekija tyontekija = lueTyontekijat.HaeTyontekija(tunniste, tyontekijatLista);
+                Tyontekija tyontekija = lueTyontekijat.HaeTyontekija(indeksi, tyontekijatLista);
 
                 if (tyontekija == null)
                 {
@@ -28,18 +29,13 @@ namespace PalkanlaskentaSovellus.Toiminnot
                     return;
                 }
 
-                Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
-                Console.WriteLine("Valitse seuraava toiminto:");
-                Console.WriteLine("[0] Lopetus");
-                Console.WriteLine("[1] Näytä tiedot");
-                Console.WriteLine("[2] Näytä viime kuukauden tunnit");
-                Console.WriteLine("[3] Näytä viime kuukauden palkan tiedot");
-                Console.WriteLine("[4] Laske palkka");
+                TulostaToiminnot(tyontekija);
+
+                PalkkaLaskuri palkkalaskuri = new PalkkaLaskuri(tyontekija);
                 int toiminto4;
                 bool syotteenTarkistus;
                 int toimintojenMaara = 4;
                 bool poistu = false;
-                SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
                 syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto4, toimintojenMaara);
 
                 switch (toiminto4)
@@ -54,17 +50,14 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         break;
 
                     case 2:
-                        Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " edellisen kuukauden tunnit:");
-                        // tulostus työntekijä-olion tehdyistä tunneista (tiedostosta)
+                        palkkalaskuri.TyonantajaMaksut();
                         break;
                     case 3:
-                        Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " viimeisimmän palkan tiedot:");
-                        // tulostus mistä työntekijän palkka koostuu (tiedostosta)
+                        palkkalaskuri.PalkanTiedot();
                         break;
                     case 4:
                         Console.WriteLine("Lasketaan työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " viimeisin palkka:\n");
-                        PalkkaLaskuri palkkalaskuri = new PalkkaLaskuri(tyontekija);
-                        palkkalaskuri.LaskePalkka();
+                        palkkalaskuri.TulostaPalkka();
                         Console.WriteLine("\n");
                         break;
                 }
@@ -75,5 +68,17 @@ namespace PalkanlaskentaSovellus.Toiminnot
                 }
             }
         }
+
+        private void TulostaToiminnot(Tyontekija tyontekija)
+        {
+            Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
+            Console.WriteLine("Valitse seuraava toiminto:");
+            Console.WriteLine("[0] Lopetus");
+            Console.WriteLine("[1] Näytä työntekijän tiedot");
+            Console.WriteLine("[2] Näytä viime kuukauden työnantajamaksut");
+            Console.WriteLine("[3] Näytä viime kuukauden palkan tiedot");
+            Console.WriteLine("[4] Laske palkka");
+        }
+
     }
 }
