@@ -21,4 +21,3 @@ Salminen;Heikki;sammutusmies;1642;0;23;
 Salonen;Ville;sammutusmies;1642;9;24;
 Turunen;Teemu;yksikönjohtaja;1811,13;9;16;
 Virta;Ville;sammutusmies;1642;9;33;
-Virtanen;Pertti;sammutusmies;1642;5;32;

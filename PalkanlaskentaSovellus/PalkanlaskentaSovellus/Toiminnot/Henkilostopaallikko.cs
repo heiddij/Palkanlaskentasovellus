@@ -58,6 +58,8 @@ namespace PalkanlaskentaSovellus.Toiminnot
                 }
                 if (poistu)
                 {
+                    TiedostonKasittelija tiedostonkasittelija = new TiedostonKasittelija();
+                    tiedostonkasittelija.Talleta(tyontekijaLista);
                     break; // Menee takaisin alkuun
                 }
             }

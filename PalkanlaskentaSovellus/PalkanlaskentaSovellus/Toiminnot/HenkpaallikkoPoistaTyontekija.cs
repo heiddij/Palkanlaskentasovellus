@@ -8,53 +8,50 @@ namespace PalkanlaskentaSovellus.Toiminnot
 {
     internal class HenkpaallikkoPoistaTyontekija
     {
+        LueTyontekijat lueTyontekijat = new LueTyontekijat();
         public void PoistaTyontekija(List<Tyontekija> tyontekijatLista)
         {
-	        Console.Clear();
+            Console.Clear();
             Console.WriteLine("Työntekijän haku");
-            Console.WriteLine("Syötä työntekijän sukunimi:");
-            var sukunimi = Console.ReadLine();
+            Console.WriteLine("Syötä työntekijän tunnistenumero:");
+            int tunniste = int.Parse(Console.ReadLine());
+            int indeksi = tunniste - 1;
 
-            for (int i = 0; i < tyontekijatLista.Count; i++)
+            Tyontekija tyontekija = lueTyontekijat.HaeTyontekija(indeksi, tyontekijatLista);
+
+            if (tyontekija == null)
+
             {
-                if (sukunimi == tyontekijatLista[i].Sukunimi)
+                Console.WriteLine("Työntekijää ei löydy. Tarkista tunnistenumero työntekija-luettelosta.\n");
+                return;
+            }
+            while (true)
+            {
+                Console.WriteLine("Löydetty työntekijä " + tyontekija.Etunimi + " " + tyontekija.Sukunimi);
+                Console.WriteLine("Haluatko varmasti poistaa työntekijän tiedot?");
+                Console.WriteLine("[0] Peruuta");
+                Console.WriteLine("[1] Poista tiedot");
+                int toiminto3;
+                bool syotteenTarkistus;
+                int toimintojenMaara = 2;
+                bool poistu = false;
+                SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
+                syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto3, toimintojenMaara);
+
+                switch (toiminto3)
                 {
-                    while (true)
-                    {
-                        Tyontekija tyontekija = tyontekijatLista[i];
-                        Console.WriteLine("Valittu työntekijä: " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + "\n");
-                        Console.WriteLine("Valitse seuraava toiminto:");
-                        Console.WriteLine("[0] Lopetus");
-                        Console.WriteLine("[1] Näytä tiedot");
-                        Console.WriteLine("[2] Poista tiedot");
-                        int toiminto3;
-                        bool syotteenTarkistus;
-                        int toimintojenMaara = 2;
-                        bool poistu = false;
-                        SyotteenTarkistus syotteenTarkistus1 = new SyotteenTarkistus();
-                        syotteenTarkistus1.SyoteJaTarkistus(out syotteenTarkistus, out toiminto3, toimintojenMaara);
-
-                        switch (toiminto3)
-                        {
-                            case 0:
-                                poistu = true;
-                                break;
-                            case 1:
-                                Console.WriteLine("Työntekijän " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + " tiedot:\n");
-                                Console.WriteLine(tyontekija.ToString()); // tulostus työntekijä-olion tiedoista
-                                Console.WriteLine("\n");
-                                break;
-
-                            case 2:
-                                PoistaTyontekija poistaTyontekija = new PoistaTyontekija();
-                                poistaTyontekija.Poista(tyontekija);
-                                break;
-                        }
-                        if (poistu)
-                        {
-                            Environment.Exit(0); // Lopettaa koko ohjelman
-                        }
-                    }
+                    case 0:
+                        poistu = true;
+                        break;
+                    case 1:
+                        PoistaTyontekija poistatyontekija = new PoistaTyontekija();
+                        poistatyontekija.Poista(indeksi, tyontekijatLista);
+                        poistu = true;
+                        break;
+                }
+                if (poistu)
+                {
+                    break;
                 }
             }
         }
