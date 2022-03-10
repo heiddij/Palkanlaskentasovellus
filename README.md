@@ -4,6 +4,7 @@ Konsolisovellus Windowsille yrityksen palkanlaskennan apuun henkilöstöpäälli
 Ohjelmalla voi nähdä, yksittäisen työntekijän tietoja, työnantajamaksut ja palkan tiedot. 
 Yksittäisen työntekijän tiedot ovat myös muokattavissa. Työntekijöitä voi myös lisätä, tai poistaa.
 Ohjelma sisältää tekstitiedoston, missä on tiedot 24:stä valmiista työntekijästä joille voi tehdä edellä mainittuja muokkauksia.
+Ohjelma tarvitsee toimiakseen ko. tekstitiedoston.
 
 Ohjelma on toteutettu osana Hämeen ammattikorkeakoulun Ohjelmointi -moduulia.
 
