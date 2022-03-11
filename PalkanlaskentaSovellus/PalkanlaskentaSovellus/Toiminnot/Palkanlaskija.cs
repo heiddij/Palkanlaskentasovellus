@@ -37,7 +37,9 @@ namespace PalkanlaskentaSovellus.Toiminnot
                         poistu = true;
                         break;
                     case 1:
+                        Console.WriteLine("Lista työntekijöistä:\n");
                         lueTyontekijat.LuetteleKaikki(tyontekijaLista);
+                        Console.WriteLine("\n");
                         break;
                     case 2:
                         PalkanlaskijaHaeTyontekija palkanlaskijaHae = new PalkanlaskijaHaeTyontekija();

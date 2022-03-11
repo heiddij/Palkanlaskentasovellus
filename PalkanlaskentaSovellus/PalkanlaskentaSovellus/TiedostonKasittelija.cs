@@ -8,7 +8,7 @@ namespace PalkanlaskentaSovellus
 {
     internal class TiedostonKasittelija
     {
-        string tiedostopolku = "../../../../../tyontekijat.txt";
+        string tiedostopolku = "../../../tyontekijat.txt";
 
         // Lisätään kaikki työntekijät listaan.
         public void LueTyontekijatTiedostosta(List<Tyontekija> tyontekijatLista)
@@ -18,15 +18,14 @@ namespace PalkanlaskentaSovellus
             while (line != null)
             {
                 string[] jaaOsiin = line.Split(";");
-                string Sukunimi = jaaOsiin[0];
-                string Etunimi = jaaOsiin[1];
-                string Tehtävä = jaaOsiin[2];
-                double Kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
-                double Ikälisä = Convert.ToDouble(jaaOsiin[4]);
-                double Veroprosentti = Convert.ToDouble(jaaOsiin[5]);
-                // Console.WriteLine(Sukunimi + Etunimi + Tehtävä + Kuukausipalkka + Ikälisä + Veroprosentti); // Testaus
+                string sukunimi = jaaOsiin[0];
+                string etunimi = jaaOsiin[1];
+                string tehtava = jaaOsiin[2];
+                double kuukausipalkka = Convert.ToDouble(jaaOsiin[3]);
+                double ikalisa = Convert.ToDouble(jaaOsiin[4]);
+                double veroprosentti = Convert.ToDouble(jaaOsiin[5]);
 
-                tyontekijatLista.Add(new Tyontekija(Sukunimi, Etunimi, Tehtävä, Kuukausipalkka, Ikälisä, Veroprosentti));
+                tyontekijatLista.Add(new Tyontekija(sukunimi, etunimi, tehtava, kuukausipalkka, ikalisa, veroprosentti));
                 line = reader.ReadLine();
             }
             reader.Close();

@@ -13,14 +13,14 @@ internal class Tyontekija
         public double Ikalisa { get; set; }
         public double Veroprosentti { get; set; }
 
-        public Tyontekija(string Sukunimi, string Etunimi, string Tehtava, double Kuukausipalkka, double Ikalisa, double Veroprosentti)
+        public Tyontekija(string sukunimi, string etunimi, string tehtava, double kuukausipalkka, double ikalisa, double veroprosentti)
         {
-            this.Sukunimi = Sukunimi;
-            this.Etunimi = Etunimi;
-            this.Tehtava = Tehtava;
-            this.Kuukausipalkka = Kuukausipalkka;
-            this.Ikalisa = Ikalisa;
-            this.Veroprosentti = Veroprosentti;
+            this.Sukunimi = sukunimi;
+            this.Etunimi = etunimi;
+            this.Tehtava = tehtava;
+            this.Kuukausipalkka = kuukausipalkka;
+            this.Ikalisa = ikalisa;
+            this.Veroprosentti = veroprosentti;
         }
 
         public Tyontekija()

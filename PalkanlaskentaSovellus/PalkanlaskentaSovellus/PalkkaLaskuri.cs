@@ -33,7 +33,7 @@ namespace PalkanlaskentaSovellus
         public void TulostaPalkka()
         {
             Console.Clear();
-            Console.WriteLine("Viime kuukauden maksettava palkka työntekijälle " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + ":\n");
+            Console.WriteLine("Viime kuukauden maksettava nettopalkka työntekijälle " + tyontekija.Etunimi + " " + tyontekija.Sukunimi + ":\n");
             Console.WriteLine($"{LaskePalkka():0.00} euroa\n");
         }
 
