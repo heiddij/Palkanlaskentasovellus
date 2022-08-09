@@ -1,4 +1,4 @@
-# Palkanlaskentasovellus - team 11
+# Palkanlaskentasovellus - ryhmätyö
 ### Tietoa
 Konsolisovellus Windowsille yrityksen palkanlaskennan apuun henkilöstöpäällikölle tai palkanlaskijalle. 
 Ohjelmalla voi nähdä, yksittäisen työntekijän tietoja, työnantajamaksut ja palkan tiedot. 
@@ -16,3 +16,6 @@ Heidi Joutsijoki
 Juho Nevalainen  
 Jukka-Pekka Pispa  
 Satu Pohjonen  
+
+### Oma osuus
+Oma osuuteni tässä ryhmätyössä ovat sovelluksen käyttöliittymä, kaikki henkilöstöpäällikön ja palkanlaskijan toiminnot sekä palkkalaskuri. 
